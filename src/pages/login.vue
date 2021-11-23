@@ -35,39 +35,37 @@
 
 <script>
 
-import axios from 'axios'
+import api from '../services/api'
 
 export default {
   name: 'App',
   async mounted(){
-    this.recarregarCursos()
+    const token = localStorage.getItem('@token')
+    if(token){
+      this.$router.push('/')
+    }
   },
 
   data: () => {
     return{
-      cursos: null,
       matricula: null,
       senha: null
     }
   },
 
   methods:{
-    async recarregarCursos(){
-      const { data } = await axios.get("http://localhost:3000/cursos")
-      this.cursos = data
-    },
     async submit(){
-      const { data:token } = await axios.post("http://localhost:3000/login", {
+      const { data:token } = await api.post('/login', {
           matricula: this.matricula, senha: this.senha
         })
       if(!token || token < 10){
         return
       }
       localStorage.setItem('@token', token)
-      this.$router.push('/')
+      location.reload()
     },
     async register(){
-      await axios.post("http://localhost:3000/cadastro", {
+      await api.post('/cadastro', {
         matricula: this.matricula, senha: this.senha
         })
     }

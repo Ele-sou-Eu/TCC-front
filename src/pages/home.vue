@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '../services/api'
 
 export default {
     data(){
@@ -36,11 +36,7 @@ export default {
     },
     methods:{
         async getDisciplinas(){
-            const { data } = await axios.get('http://localhost:3000/disciplinas', {
-                headers: {
-                    'x-access-token': localStorage.getItem('@token')
-                }
-            })
+            const { data } = await api.get('/disciplinas')
             this.disciplinas = data
         }
     },
