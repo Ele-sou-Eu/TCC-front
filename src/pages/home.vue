@@ -12,9 +12,9 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="disciplina of disciplinas" :key="disciplina['Código_disciplina']">
+              <tr v-for="disciplina of disciplinas" :key="disciplina.codigo_disciplina">
                   <td>
-                      {{disciplina['Código_disciplina']}}
+                      {{disciplina.codigo_disciplina}}
                   </td>
                   <td>
                       {{disciplina.Nome}}
@@ -22,6 +22,7 @@
               </tr>
           </tbody>
       </table>
+      <router-link to="/teste">Teste de diagrama</router-link>
   </div>
 </template>
 
