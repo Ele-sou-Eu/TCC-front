@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import home from '../pages/home'
+//import home from '../pages/home'
 import login from '../pages/login'
 import teste from '../pages/teste'
 
@@ -12,7 +12,7 @@ const routers = new VueRouter({
         {
             path: '/',
             name: 'home',
-            component: home
+            component: teste
         },
         {
             path: '/login',
