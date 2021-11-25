@@ -41,7 +41,7 @@ export default {
     methods: {
         updateDiagramaDisciplinas() {
             this.diagramaDisciplina.nodeTemplate = $(go.Node, "Auto",
-                $(go.Shape, "RoundedRectangle", { strokeWidth: 0, fill: "white" },
+                $(go.Shape, "Circle", { strokeWidth: 0, fill: "white" },
                 new go.Binding("fill", "color")),
                 $(go.TextBlock,
                 { margin: 8 },
@@ -82,6 +82,6 @@ export default {
 <style scoped>
 .diagrama {
   width: 100%;
-  height: 500px;
+  height: 1000px;
 }
 </style>
