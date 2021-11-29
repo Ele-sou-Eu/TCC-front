@@ -17,7 +17,7 @@
                       {{disciplina.codigo_disciplina}}
                   </td>
                   <td>
-                      {{disciplina.Nome}}
+                      {{disciplina.nome}}
                   </td>
               </tr>
           </tbody>

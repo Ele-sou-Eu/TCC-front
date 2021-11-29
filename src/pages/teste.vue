@@ -41,7 +41,7 @@ export default {
     methods: {
         updateDiagramaDisciplinas() {
             this.diagramaDisciplina.nodeTemplate = $(go.Node, "Auto",
-                $(go.Shape, "Circle", { strokeWidth: 0, fill: "white" },
+                $(go.Shape, "RoundedRectangle", { strokeWidth: 0, fill: "white" },
                 new go.Binding("fill", "color")),
                 $(go.TextBlock,
                 { margin: 8 },
@@ -56,7 +56,7 @@ export default {
             this.ligacoes_disciplinas = []
             const modelsDisciplinas = disciplinas.map(disciplina => {
                 return {
-                    key: disciplina.Nome, color: "lightblue"
+                    key: disciplina.nome, color: "lightblue"
                 }
             })
 
@@ -70,7 +70,7 @@ export default {
                     return false
                 }).map(preRequisito => {
                     return {
-                        from: preRequisito.Nome, to: disciplina.Nome
+                        from: preRequisito.nome, to: disciplina.nome
                     }
                 })]
             });
