@@ -1,55 +1,26 @@
 <template>
   <div id="app">
-    <!--<table>
-      <thead>
-        <tr>
-          <th>Código do Curso</th>
-          <th>Nome</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="curso in cursos" :key="curso.codigo_curso">
-          <td>{{curso.codigo_curso}}</td>
-          <td>{{curso.Nome}}</td>
-        </tr>
-      </tbody>
-    </table>-->
-
-    <!-- Formulário com número de matrícula e senha e botão de OK-->
-    <!--<button @click="recarregarCursos">Recarregar</button>
-    <b-form-group>
-      <input>
-        id="matricula"
-        type="text"
-      </input>
-    </b-form-group>
-    <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" required>
-    <button @click="submit(document.getElementById('matricula').value, document.getElementById('senha').value)">Submeter</button>-->
     <!-- <input type="text" v-model="matricula" required>
     <input type="password" v-model="senha" required>
     <button @click="submit">Entrar</button>
     <button @click="register">Registrar</button> -->
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>UFRN - Projeto level-up</h1>
-      <h2>login</h2>
-    </div>
-    <div class="main">
-        <span>
-          <i class="fa fa-user"></i>
-          <input type="text" v-model="matricula" required>
-        </span><br>
-        <span>
-          <i class="fa fa-lock"></i>
-          <input type="password" v-model="senha" required>
-          </span><br>
-          <button @click="submit">Entrar</button>
-          <button @click="register">Registrar</button>
-  </div>
-</div>
-</body>
+    <body>
+      <div class="container">
+        <div class="header">
+          <h1>Projeto Level-Up</h1>
+          <h2>Login</h2>
+        </div>
+        <div class="main">
+            <h4>Número de matrícula:</h4>
+            <input type="text" v-model="matricula" required placeholder="Número de matrícula">
+            <h4>Senha:</h4>
+            <input type="password" v-model="senha" required placeholder="Senha">
+            <button @click="submit">Entrar</button>
+            <br>
+            <button @click="register">Registrar</button>
+        </div>
+      </div>
+    </body>
 </div>
 </template>
 
@@ -118,27 +89,36 @@ body {
 	margin-bottom: 20px;
 }
 
+.header h2 {
+  margin-bottom: 30px;
+}
+
 .main {
 	text-align: center;
 }
 
-.main input{
-  width: 300px;
+.main h4 {
+  text-align: left;
+  padding-left: 40px;
+  margin-bottom: 5px;
+  margin-top: 0px;
 }
 
 .main input, button {
+  width: 300px;
 	height: 40px;
 	border:none;
+  border-radius: 5px;
 	outline: none;
 	padding-left: 40px;
 	box-sizing: border-box;
 	font-size: 15px;
 	color: #333;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 
 .main button {
-  width: 200px;
+  width: 100px;
 	padding-left: 0;
 	background-color: #83acf1;
 	letter-spacing: 1px;
@@ -155,15 +135,4 @@ body {
 	background-color: #ddd;
 }
 
-.main span {
-	position: relative;
-}
-
-.main i {
-	position: absolute;
-	left: 15px;
-	color: #333;
-	font-size: 16px;
-	top: 2px;
-}
 </style>
