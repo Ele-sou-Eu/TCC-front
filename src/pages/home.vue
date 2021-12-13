@@ -22,14 +22,18 @@
               </tr>
           </tbody>
       </table>
-      <router-link to="/teste">Teste de diagrama</router-link>
+      <diagrama-disciplina />
   </div>
 </template>
 
 <script>
 import api from '../services/api'
+import DiagramaDisciplinas from '../components/diagramaDisciplinas.vue'
 
 export default {
+    components:{
+        "diagrama-disciplina": DiagramaDisciplinas
+    },
     data(){
         return {
             disciplinas: null
