@@ -1,5 +1,9 @@
 # front
 
+Client para o trabalho de TCC, responsável por fazer o login e logout do aluno, além da montagem do diagrama de disciplinas.
+
+Inicialização: Abrir um terminal powershell e rodar o comando 'npm run serve'
+
 ## Project setup
 ```
 npm install
